@@ -1,0 +1,67 @@
+[gd_scene format=4 uid="uid://ol5coh2ty4wn"]
+
+[ext_resource type="Script" uid="uid://cg00611kpdc5i" path="res://danko.gd" id="1_112p8"]
+[ext_resource type="Texture2D" uid="uid://dvq7rhfn8uel8" path="res://characters/sprites/Danko1.png" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://coku60a4uv04t" path="res://characters/sprites/Danko2.png" id="2_112p8"]
+[ext_resource type="Texture2D" uid="uid://bpldkm8w0yt86" path="res://floor/sprites/floor.png" id="4_e2u21"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgtat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2q8x")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2q8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_112p8")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2q8x"]
+size = Vector2(11, 6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bss38"]
+texture = ExtResource("4_e2u21")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kgtat"]
+physics_layer_0/collision_layer = 1
+sources/6 = SubResource("TileSetAtlasSource_bss38")
+
+[node name="Node" type="Node" unique_id=1808782246]
+
+[node name="Danko" type="Node2D" parent="." unique_id=1343517324]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Danko" unique_id=691740695]
+position = Vector2(160, 394)
+scale = Vector2(4, 4)
+script = ExtResource("1_112p8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Danko/CharacterBody2D" unique_id=622684591]
+sprite_frames = SubResource("SpriteFrames_kgtat")
+animation = &"run"
+frame_progress = 0.5970038
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Danko/CharacterBody2D" unique_id=1094842042]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_j2q8x")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2026201820]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAAgABgAAAAAAAAABAAgABgABAAAAAAACAAgABgABAAAAAAADAAgABgABAAAAAAAEAAgABgABAAAAAAAFAAgABgABAAAAAAAGAAgABgABAAAAAAAHAAgABgABAAAAAAAIAAgABgABAAAAAAAJAAgABgABAAAAAAAKAAgABgABAAAAAAALAAgABgABAAAAAAAMAAgABgABAAAAAAANAAgABgABAAAAAAAOAAgABgABAAAAAAAPAAgABgABAAAAAAAQAAgABgABAAAAAAARAAgABgACAAAAAAA=")
+tile_set = SubResource("TileSet_kgtat")
