@@ -25,10 +25,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_112p8")
+"texture": ExtResource("1_j2q8x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_j2q8x")
+"texture": ExtResource("2_112p8")
 }],
 "loop": 1,
 "name": &"run",
@@ -54,9 +54,9 @@ sources/6 = SubResource("TileSetAtlasSource_bss38")
 [node name="Node" type="Node" unique_id=1808782246]
 
 [node name="Danko" type="Node2D" parent="." unique_id=1343517324]
-position = Vector2(60, 22)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Danko" unique_id=691740695]
+position = Vector2(160, 394)
 scale = Vector2(4, 4)
 script = ExtResource("1_112p8")
 
@@ -71,5 +71,5 @@ shape = SubResource("RectangleShape2D_j2q8x")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2026201820]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAAgABgAAAAAAAAABAAgABgABAAAAAAACAAgABgABAAAAAAADAAgABgABAAAAAAAEAAgABgABAAAAAAAFAAgABgABAAAAAAAGAAgABgABAAAAAAAHAAgABgABAAAAAAAIAAgABgABAAAAAAAJAAgABgABAAAAAAAKAAgABgABAAAAAAALAAgABgABAAAAAAAMAAgABgABAAAAAAANAAgABgABAAAAAAAOAAgABgABAAAAAAAPAAgABgABAAAAAAAQAAgABgABAAAAAAARAAgABgACAAAAAAABAAEABgACAAAAAAAAAAEABgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgABgAAAAAAAAABAAgABgABAAAAAAACAAgABgABAAAAAAADAAgABgABAAAAAAAEAAgABgABAAAAAAAFAAgABgABAAAAAAAGAAgABgABAAAAAAAHAAgABgABAAAAAAAIAAgABgABAAAAAAAJAAgABgABAAAAAAAKAAgABgABAAAAAAALAAgABgABAAAAAAAMAAgABgABAAAAAAANAAgABgABAAAAAAAOAAgABgABAAAAAAAPAAgABgABAAAAAAAQAAgABgABAAAAAAARAAgABgACAAAAAAA=")
 tile_set = SubResource("TileSet_kgtat")
