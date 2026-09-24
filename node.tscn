@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://ol5coh2ty4wn"]
 
 [ext_resource type="Script" uid="uid://cg00611kpdc5i" path="res://danko.gd" id="1_112p8"]
+[ext_resource type="Texture2D" uid="uid://q4v2tvuc7gvo" path="res://background/backgroundSketch.png" id="1_bss38"]
 [ext_resource type="Texture2D" uid="uid://dvq7rhfn8uel8" path="res://characters/sprites/Danko1.png" id="1_j2q8x"]
 [ext_resource type="Texture2D" uid="uid://coku60a4uv04t" path="res://characters/sprites/Danko2.png" id="2_112p8"]
 [ext_resource type="Texture2D" uid="uid://bpldkm8w0yt86" path="res://floor/sprites/floor.png" id="4_e2u21"]
+[ext_resource type="Texture2D" uid="uid://bhi7slw8p3hlv" path="res://floor/sprites/roof.png" id="6_tda05"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kgtat"]
 animations = [{
@@ -36,40 +38,71 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2q8x"]
-size = Vector2(11, 6)
+size = Vector2(11, 5.75)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bss38"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2u21"]
 texture = ExtResource("4_e2u21")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tda05"]
+texture = ExtResource("6_tda05")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_kgtat"]
 physics_layer_0/collision_layer = 1
-sources/6 = SubResource("TileSetAtlasSource_bss38")
+sources/5 = SubResource("TileSetAtlasSource_e2u21")
+sources/8 = SubResource("TileSetAtlasSource_tda05")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [1, Vector2i(0, 0)], [6, Vector2i(0, 0)], [1, Vector2i(0, 1)], [6, Vector2i(1, 0)], [1, Vector2i(1, 1)], [6, Vector2i(2, 0)], [1, Vector2i(2, 1)]]
 
 [node name="Node" type="Node" unique_id=1808782246]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1007493701]
+position = Vector2(540, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("1_bss38")
+
 [node name="Danko" type="Node2D" parent="." unique_id=1343517324]
-position = Vector2(60, 22)
+position = Vector2(559, 196)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Danko" unique_id=691740695]
 scale = Vector2(4, 4)
 script = ExtResource("1_112p8")
+JUMP_VELOCITY = -500
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Danko/CharacterBody2D" unique_id=622684591]
 sprite_frames = SubResource("SpriteFrames_kgtat")
-animation = &"run"
-frame_progress = 0.1488106
+animation = &"idle"
+frame_progress = 0.66977936
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Danko/CharacterBody2D" unique_id=1094842042]
-position = Vector2(0.5, 3)
+position = Vector2(0.5, 2.875)
 shape = SubResource("RectangleShape2D_j2q8x")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2026201820]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAAgABgAAAAAAAAABAAgABgABAAAAAAACAAgABgABAAAAAAADAAgABgABAAAAAAAEAAgABgABAAAAAAAFAAgABgABAAAAAAAGAAgABgABAAAAAAAHAAgABgABAAAAAAAIAAgABgABAAAAAAAJAAgABgABAAAAAAAKAAgABgABAAAAAAALAAgABgABAAAAAAAMAAgABgABAAAAAAANAAgABgABAAAAAAAOAAgABgABAAAAAAAPAAgABgABAAAAAAAQAAgABgABAAAAAAARAAgABgACAAAAAAABAAEABgACAAAAAAAAAAEABgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAA0ACAAAAAAAAAACAA0ACAABAAAAAAADAA0ACAABAAAAAAAEAA0ACAABAAAAAAAFAA0ACAABAAAAAAAGAA0ACAABAAAAAAAHAA0ACAABAAAAAAAIAA0ACAABAAAAAAAJAA0ACAABAAAAAAAKAA0ACAABAAAAAAALAA0ACAABAAAAAAAMAA0ACAABAAAAAAANAA0ACAABAAAAAAAOAA0ACAABAAAAAAAPAA0ACAACAAAAAAAPAA4ACAABAAEAAAAPAA8ACAABAAEAAAAOAA8ACAABAAEAAAANAA8ACAABAAEAAAANABAACAABAAIAAAAMABAACAABAAIAAAALABAACAABAAIAAAAKABAACAABAAIAAAABABAACAAAAAIAAAACABAACAABAAIAAAADABAACAABAAIAAAAEAA8ACAABAAEAAAAEABAACAABAAIAAAAFAA8ACAABAAEAAAAGAA4ACAABAAEAAAAGAA8ACAABAAEAAAAHAA4ACAABAAEAAAABAA4ACAABAAEAAAABAA8ACAABAAEAAAACAA8ACAABAAEAAAACAA4ACAABAAEAAAADAA4ACAABAAEAAAAEAA4ACAABAAEAAAAFAA4ACAABAAEAAAADAA8ACAABAAEAAAAFABAACAABAAIAAAAGABAACAABAAIAAAAHABAACAABAAIAAAAIABAACAABAAIAAAAJABAACAABAAIAAAAJAA8ACAABAAEAAAAJAA4ACAABAAEAAAAIAA4ACAABAAEAAAAHAA8ACAABAAEAAAAIAA8ACAABAAEAAAAKAA8ACAABAAEAAAAKAA4ACAABAAEAAAALAA4ACAABAAEAAAAMAA4ACAABAAEAAAANAA4ACAABAAEAAAALAA8ACAABAAEAAAAMAA8ACAABAAEAAAAOAA4ACAABAAEAAAAOABAACAABAAIAAAAPABAACAACAAIAAAA=")
 tile_set = SubResource("TileSet_kgtat")
