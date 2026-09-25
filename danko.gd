@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var SPEED = 350.0
 @export var JUMP_VELOCITY = 0
+@onready var healthComponent = $HealthComponent
 
 var direction = 0
 
@@ -15,6 +16,8 @@ enum STATE {
 
 var cur_state = STATE.IDLE
 
+func _ready() -> void:
+	healthComponent.died.connect(die)
 
 
 
@@ -105,6 +108,7 @@ func state_run(delta):
 	pass
 
 func state_jump(delta):
+	
 	$AnimatedSprite2D.play("jump")
 	velocity.x = direction * SPEED
 	
@@ -119,3 +123,6 @@ func state_jump(delta):
 	
 	
 	pass
+	
+func die():
+	queue_free()

@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://coku60a4uv04t" path="res://characters/sprites/Danko2.png" id="2_112p8"]
 [ext_resource type="Texture2D" uid="uid://bpldkm8w0yt86" path="res://floor/sprites/floor.png" id="4_e2u21"]
 [ext_resource type="Script" uid="uid://chxaskpthpdcc" path="res://health_component.gd" id="5_qn3nj"]
-[ext_resource type="Texture2D" uid="uid://b85sl2pfy8cso" path="res://HUD/health/baseHeart.png" id="6_l6pdb"]
 [ext_resource type="Texture2D" uid="uid://bhi7slw8p3hlv" path="res://floor/sprites/roof.png" id="6_tda05"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kgtat"]
@@ -106,29 +105,6 @@ shape = SubResource("RectangleShape2D_j2q8x")
 
 [node name="HealthComponent" type="Node" parent="Danko/CharacterBody2D" unique_id=74720897]
 script = ExtResource("5_qn3nj")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Danko/CharacterBody2D" unique_id=223095750]
-visible = false
-offset_left = -28.0
-offset_top = -21.75
-offset_right = 28.0
-offset_bottom = -5.75
-tooltip_text = " "
-theme_override_constants/separation = -4
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Danko/CharacterBody2D/HBoxContainer" unique_id=699378991]
-layout_mode = 2
-texture = ExtResource("6_l6pdb")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Danko/CharacterBody2D/HBoxContainer" unique_id=5594302]
-layout_mode = 2
-texture = ExtResource("6_l6pdb")
-
-[node name="TextureRect3" type="TextureRect" parent="Danko/CharacterBody2D/HBoxContainer" unique_id=760095171]
-layout_mode = 2
-texture = ExtResource("6_l6pdb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2026201820]
 scale = Vector2(4, 4)
