@@ -33,7 +33,10 @@ La idea es sencilla:
 
 ## 🖼️ Capturas
 
-Work in progress...
+![Danko](dankoPradera.png)
+![Danko](dankoSaltandoMini.png)
+![Danko](dankoTejado.png)
+![Danko](dankoTejadoMini.png)
 
 ## 🛠️ Tecnologías
 
