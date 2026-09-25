@@ -33,10 +33,10 @@ La idea es sencilla:
 
 ## 🖼️ Capturas
 
-![Danko](dankoPradera.png)
-![Danko](dankoSaltandoMini.png)
-![Danko](dankoTejado.png)
-![Danko](dankoTejadoMini.png)
+![Danko](capturas/dankoPradera.png)
+![Danko](capturas/dankoSaltandoMini.png)
+![Danko](capturas/dankoTejado.png)
+![Danko](capturas/dankoTejadoMini.png)
 
 ## 🛠️ Tecnologías
 
